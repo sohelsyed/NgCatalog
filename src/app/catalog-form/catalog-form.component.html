@@ -1,0 +1,10 @@
+<h1>Add/Edit User</h1>
+<form #catForm="ngForm" (ngSubmit)="onSubmit()">
+  Id : <input type="text" id="name2" [(ngModel)]="name2" 
+  name="name2" #nameIn="ngModel" required /><br/>
+  <div [hidden]="nameIn.valid ||nameIn.pristine">
+      Name is Invalid
+  </div>
+  Title : <input type="text" id="title"/><br/>
+  <input type="submit" value="Submit the Form"/>
+  </form>

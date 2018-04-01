@@ -1,18 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { NgModule, Component } from '@angular/core';
+import { Router, RouterModule } from '@angular/router'
 import { AppComponent } from './app.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { HttpClientModule} from '@angular/common/http';
+import { CatalogFormComponent } from './catalog-form/catalog-form.component';
+import { FormsModule} from '@angular/forms'
+
+const ROUTING = [
+  {path:'showAll', component:CatalogComponent},
+  {path:'addEdit', component:CatalogFormComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    CatalogComponent
+    CatalogComponent,
+    CatalogFormComponent
   ],
   imports: [
+    RouterModule.forRoot(ROUTING),
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
